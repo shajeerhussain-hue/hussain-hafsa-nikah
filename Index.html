@@ -228,7 +228,42 @@ WhatsApp RSVP
 <button onclick="document.getElementById('bgmusic').play();this.style.display='none';">
 Play Sound
 </button>
+<button id="musicBtn"
+onclick="startMusic()"
+style="
+position:fixed;
+top:20px;
+right:20px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:#14233c;
+color:white;
+font-size:28px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+z-index:9999;
+">
+🔊
+</button>
 
+<audio id="bgmusic" loop>
+<source src="AUD-20260606-WA0126.mp3" type="audio/mpeg">
+</audio><script>
+function startMusic(){
+const music=document.getElementById("bgmusic");
+const btn=document.getElementById("musicBtn");
+
+if(music.paused){
+music.play();
+btn.innerHTML="🔇";
+}else{
+music.pause();
+btn.innerHTML="🔊";
+}
+}
+</script>
 <audio id="bgmusic" loop>
   <source src="AUD-20260606-WA0126.mp3" type="audio/mpeg">
 </audio>
