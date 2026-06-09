@@ -1,4 +1,5 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +7,6 @@
 <title>Hussain & Hafsa | Nikah Invitation</title>
 
 <style>
-  
 
 body{
 margin:0;
@@ -15,6 +15,32 @@ font-family:Georgia, serif;
 background:#f8f4ee;
 color:#14233c;
 text-align:center;
+}
+
+#cover{
+background:url('CoverPage.jpeg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+height:100vh;
+width:100%;
+position:relative;
+}
+
+.open-btn{
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+padding:12px 28px;
+background:#1E2A44;
+color:white;
+text-decoration:none;
+border-radius:30px;
+border:2px solid #B89A5A;
+font-size:18px;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+z-index:999;
 }
 
 .hero{
@@ -99,38 +125,35 @@ margin-top:50px;
 color:#b8963d;
 }
 
+#musicBtn{
+position:fixed;
+top:20px;
+right:20px;
+width:36px;
+height:36px;
+border:none;
+border-radius:50%;
+background:#14233c;
+color:white;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+z-index:9999;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div id="cover" style="
-background:url('CoverPage.jpeg');
-background-size:cover;
-background-position:center;
-height:100vh;
-position:relative;
-">
+<div id="cover">
 
 <a href="javascript:void(0)"
-onclick="openInvitation()"
-style="
-position:fixed;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-padding:12px 28px;
-background:#1E2A44;
-color:white;
-text-decoration:none;
-border-radius:30px;
-border:2px solid #B89A5A;
-font-size:18px;
-box-shadow:0 4px 12px rgba(0,0,0,.3);
-z-index:9999;
-">
-🔊 Open Invitation
-</a>
+class="open-btn"
+onclick="openInvitation()">
+🔊 Open Invitation </a>
+
 </div>
 
 <div id="main">
@@ -191,9 +214,7 @@ Seconds
 
 <h2 class="gold">Families</h2>
 
-<p>
-Mr. & Mrs. NC Mohammed & Selma Mohammed
-</p>
+<p>Mr. & Mrs. NC Mohammed & Selma Mohammed</p>
 
 <p>
 Cordially invite you to the Nikah of their beloved son
@@ -203,9 +224,7 @@ Cordially invite you to the Nikah of their beloved son
 <strong>Hussain Marakkar Mohammed</strong>
 </p>
 
-<p>
-with
-</p>
+<p>with</p>
 
 <p>
 <strong>Hafsa K.T.</strong>
@@ -221,18 +240,11 @@ D/o Muhammad Aslam K.T. & Hasheeja P.P.
 
 <h2 class="gold">Event Details</h2>
 
-<p>
-Saturday, 04 July 2026
-</p>
+<p>Saturday, 04 July 2026</p>
 
-<p>
-Nikah: 5:00 PM
-</p>
+<p>Nikah: 5:00 PM</p>
 
-<p>
-Reception & Dinner:
-6:00 PM – 9:00 PM
-</p>
+<p>Reception & Dinner: 6:00 PM – 9:00 PM</p>
 
 <p>
 K-Hills<br>
@@ -241,9 +253,9 @@ Ramanattukara, Calicut
 </p>
 
 <a class="btn"
-href="https://maps.app.goo.gl/mNj8mjCt8iSweByv9?g_st=ac">
-View Location
-</a>
+href="https://maps.app.goo.gl/mNj8mjCt8iSweByv9?g_st=ac"
+target="_blank">
+View Location </a>
 
 </div>
 
@@ -252,54 +264,13 @@ View Location
 <h2 class="gold">RSVP</h2>
 
 <a class="btn"
-href="https://wa.me/919995234022">
-WhatsApp RSVP
-</a>
+href="https://wa.me/919995234022"
+target="_blank">
+WhatsApp RSVP </a>
 
 </div>
-<button onclick="document.getElementById('bgmusic').play();this.style.display='none';">
 
-</button>
-<button id="musicBtn"
-onclick="startMusic()"
-style="
-position:fixed;
-top:20px;
-right:20px;
-width:36px;
-height:36px;
-border:none;
-border-radius:50%;
-background:#14233c;
-color:white;
-font-size:16px;
-cursor:pointer;
-box-shadow:0 4px 10px rgba(0,0,0,.3);
-z-index:9999;
-">
-🔊
-</button>
-
-<audio id="bgmusic" loop>
-<source src="AUD-20260606-WA0126.mp3" type="audio/mpeg">
-</audio><script>
-function startMusic(){
-const music=document.getElementById("bgmusic");
-const btn=document.getElementById("musicBtn");
-
-if(music.paused){
-music.play();
-btn.innerHTML="🔇";
-}else{
-music.pause();
-btn.innerHTML="🔊";
-}
-}
-</script>
-<audio id="bgmusic" loop>
-  <source src="AUD-20260606-WA0126.mp3" type="audio/mpeg">
-</audio>
-
+</div>
 
 <div class="footer">
 
@@ -312,14 +283,52 @@ May Allah bless you both and unite you in goodness.
 </p>
 
 <p>
-Best Wishes from
-<br>
+Best Wishes from<br>
 Abaan & Samaah N.C.K
 </p>
 
 </div>
 
+</div>
+
+<button id="musicBtn" onclick="toggleMusic()">
+🔊
+</button>
+
+<audio id="bgmusic" loop>
+<source src="AUD-20260606-WA0126.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+
+function openInvitation(){
+
+const music=document.getElementById("bgmusic");
+
+if(music){
+music.play();
+}
+
+document.getElementById("main").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function toggleMusic(){
+
+const music=document.getElementById("bgmusic");
+const btn=document.getElementById("musicBtn");
+
+if(music.paused){
+music.play();
+btn.innerHTML="🔇";
+}else{
+music.pause();
+btn.innerHTML="🔊";
+}
+
+}
 
 const targetDate =
 new Date("July 4, 2026 17:00:00").getTime();
@@ -328,8 +337,7 @@ setInterval(function(){
 
 const now = new Date().getTime();
 
-const distance =
-targetDate - now;
+const distance = targetDate - now;
 
 document.getElementById("days").innerHTML =
 Math.floor(distance/(1000*60*60*24));
@@ -347,24 +355,5 @@ Math.floor((distance%(1000*60))/1000);
 
 </script>
 
-</div>
-
-<script>
-function openInvitation(){
-
-  var music = document.getElementById("bgmusic");
-
-  if(music){
-    music.play();
-  }
-
-  document.getElementById("main").scrollIntoView({
-    behavior:"smooth"
-  });
-}
-</script>
-
-
-  
 </body>
 </html>
